@@ -61,7 +61,8 @@ A full-stack **real-time chat application** built using the **MERN Stack**, **So
 
 | Image Sharing             | Edit/Delete              |
 | ------------------------- | ------------------------ |
-| ![Image](YOUR_IMAGE_LINK) | ![Edit](YOUR_IMAGE_LINK) |
+| ![Image](YOUR_IMAGE_LINK) | <img width="1918" height="965" alt="image" src="https://github.com/user-attachments/assets/0557597e-8d2c-4ff2-b796-fa91389ab2f7" />
+ |
 
 ## ⚙️ Installation
 
