@@ -110,6 +110,18 @@ export const useAuthStore = create((set, get) => ({
 
     set({ socket: socket });
 
+    socket.on("connect", () => {
+      console.log("✅ Socket connected:", socket.id);
+    });
+
+    socket.on("disconnect", (reason) => {
+      console.log("❌ Socket disconnected:", reason);
+    });
+
+    socket.on("connect_error", (err) => {
+      console.log("🚨 Socket error:", err.message);
+    });
+
     socket.on("getOnlineUsers", (userIds) => {
       set({ onlineUsers: userIds });
     });
