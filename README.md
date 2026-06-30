@@ -51,7 +51,7 @@ A full-stack **real-time chat application** built using the **MERN Stack**, **So
 
 ## 🌐 Live Demo
 
-🔗 **Deployed App:** `https://your-production-link.com`
+🔗 **Deployed App:** https://mern-letschat.onrender.com
 
 ## 📸 Screenshots
 
