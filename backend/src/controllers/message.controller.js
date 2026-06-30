@@ -7,7 +7,7 @@ import { getReceiverSocketId, io } from "../lib/socket.js";
 export const getUsersForSidebar = async (req, res) => {
     try {
         const loggedInUserId = req.user._id;
-        const filteredUsers = await User.find({ _id: { $ne: loggedInUserId } }).select("-password");
+        const filteredUsers = await User.find({ _id: { $ne: loggedInUserId } }).sort({ createdAt: -1 }).select("-password");
 
         res.status(200).json(filteredUsers);
     } catch (error) {
@@ -139,6 +139,12 @@ export const editMessage = async (req, res) => {
     message.edited = true;
 
     await message.save();
+
+    const receiverSocketId = getReceiverSocketId(message.receiverId.toString());
+
+    if (receiverSocketId) {
+      io.to(receiverSocketId).emit("messageEdited", message);
+    }
 
     res.status(200).json(message);
   } catch (error) {
